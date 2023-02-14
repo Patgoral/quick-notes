@@ -10,6 +10,6 @@ router.get('/', notesCtrl.read)
 
 
 // CREATE
-router.post('/', notesCtrl.create) 
+router.post('/', ensureLoggedIn, notesCtrl.create) 
 
 module.exports = router

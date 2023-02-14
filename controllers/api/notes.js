@@ -1,7 +1,6 @@
 const Note = require('../../models/notes')
 
 async function create(req, res, next) {
-	// just for right now I want to see if this is connected
 	console.log(req.body)
 	try {
 		const note = req.body.note
