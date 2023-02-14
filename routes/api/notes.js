@@ -5,7 +5,7 @@ const notesCtrl = require('../../controllers/api/notes')
 
 
 // INDEX
-router.get('/', notesCtrl.read)
+router.get('/', ensureLoggedIn, notesCtrl.read)
 
 
 

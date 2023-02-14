@@ -1,7 +1,10 @@
-export default function NoteCard({}) {
+
+
+export default function NoteCard({text, createdAt}) {
 	return (
 		<div className="NoteCard">
-			<h2>notetext</h2>
+			<h2>{text}</h2>
+			<p>{createdAt}</p>
 		</div>
 	)
 }

@@ -10,16 +10,8 @@ import { getUser } from '../../utilities/users-services'
 
 function App() {
 	const [user, setUser] = useState(getUser())
-	const [data, setData] = useState(null)
-	const [error, setError] = useState(null)
 
-	useEffect(() => {
-		fetch('/api/notes', {
-			headers: {Authentication: 'Bearer {token}'}
-	})
-		.then((res) => res.json())
-		.then((json) => console.log(json))
-	}, [])
+
 
 	return (
 		<main className="App">
@@ -27,7 +19,7 @@ function App() {
 				<>
 					<NavBar user={user} setUser={setUser}/>
 					<Routes>
-					<Route path="/" element={<NotesListPage />}/>
+					<Route path="/" element={<NotesListPage user={user}/>}/>
 						<Route path="/notes/new" element={<NewNotePage />} />
 					</Routes>
 				</>
